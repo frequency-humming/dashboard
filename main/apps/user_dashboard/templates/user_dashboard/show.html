@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_dashboard/css/show.css' %}">
+</head>
+<body>
+    <a href="/dashboard/admin">Back</a>
+    <div>
+        <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+        <h2>Email address: {{ user.email}}</h2> 
+        <h3>User ID: {{ user.id}}</h3>
+        <h4>Registered at: {{ user.created_at }}</h4>
+        <h3>Leave a message for {{ user.first_name }}</h3>
+        <form action="/users/{{user.id}}" method="post">
+            {% csrf_token %}
+            <textarea name="comment"></textarea>
+            <input type="submit" value="post">
+        </form>
+        {% for message in comments %}
+        <p><strong>{{ message.user_comments.first_name }}</strong> wrote</p>
+        <p>{{ message.content }}</p>
+        {% endfor %} 
+    </div> 
+</body>
+</html>

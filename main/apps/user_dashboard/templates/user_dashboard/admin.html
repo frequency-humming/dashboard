@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_dashboard/css/main.css' %}">
+</head>
+<body>
+    {% for user in users %}
+    <div>
+        <h2>Name:&nbsp<a href="/users/show/{{user.id}}">{{ user.first_name }} {{ user.last_name}}</a></h2>  
+        <h3>Email: {{ user.email }}</h3>
+        <h4>Registered: {{ user.created_at}}</h4>
+        <h4>Acces Level: {{ user.level}}</h4>
+        {% if active_user.level > 1%} 
+        <p><a href="/users/edit/{{user.id}}">Edit</a></p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</body>
+</html>

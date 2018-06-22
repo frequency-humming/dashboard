@@ -1,0 +1,14 @@
+form {
+    text-align: center;
+    margin-top: 12%;
+    
+}
+button {
+    height: 200px;
+    width: 220px;
+    border-radius: 120px;
+    background-color: rgb(41, 187, 198);
+    font-size: 20px;
+    font-weight: 80;
+    color: rgb(232, 70, 70);
+}

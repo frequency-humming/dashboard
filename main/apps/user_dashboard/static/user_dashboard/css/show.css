@@ -1,0 +1,10 @@
+h1 {
+    text-transform: capitalize;
+}
+div {
+    text-align: center;
+    vertical-align: top;
+}
+a {
+    font-size: 24px;
+}

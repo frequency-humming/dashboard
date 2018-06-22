@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_dashboard/css/home.css' %}">
+</head>
+<body>
+    <form action="/signin" method="post">
+        {% csrf_token %}
+        <button>Enter the dashboard</button>
+    </form>
+    
+</body>
+</html>
